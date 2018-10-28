@@ -9,8 +9,8 @@ class EveWindowManager:
     def click_something(self):
         pyautogui.click(100,100,1)
 
-    def undock('Undock.png'):
-        undock_location = pyautogui.locateOnScreen('Undock.png')
+    def undock(self,file_name):
+        undock_location = pyautogui.locateOnScreen(file_name)
         undock_location_x,undock_location_y = pyautogui.center(undock_location)
         pyautogui.click(undock_location_x,undock_location_y)
 
