@@ -1,5 +1,5 @@
 import pyautogui
-from pyautogui import getWindow
+
 
 class EveWindowManager:
 
@@ -9,14 +9,13 @@ class EveWindowManager:
     def click_something(self):
         pyautogui.click(100,100,1)
 
-    def undock(self, file_name):
+    def undock(self,file_name):
         undock_location = pyautogui.locateOnScreen(file_name)
-        undock_location_x, undock_location_y = pyautogui.center(undock_location)
-        pyautogui.click(undock_location_x, undock_location_y)
+        undock_location_x,undock_location_y = pyautogui.center(undock_location)
+        pyautogui.click(undock_location_x,undock_location_y)
 
 
 
 if __name__ == '__main__':
     window_manager = EveWindowManager()
-    window_manager.click_something()
     window_manager.undock('Undock.png')
