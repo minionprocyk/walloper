@@ -1,5 +1,6 @@
 import pyautogui
-
+import os
+from GlobalSettings import IMAGES_DIR
 
 class EveWindowManager:
 
@@ -7,13 +8,15 @@ class EveWindowManager:
         self.is_running = False
 
     def click_something(self):
-        pyautogui.click(100,100,1)
+        pyautogui.click(100, 100, 1)
 
-    def undock(self,file_name):
-        undock_location = pyautogui.locateOnScreen(file_name)
-        undock_location_x,undock_location_y = pyautogui.center(undock_location)
-        pyautogui.click(undock_location_x,undock_location_y)
-
+    def undock(self, file_name):
+        undock_location = pyautogui.locateOnScreen(os.path.join(IMAGES_DIR, file_name))
+        if undock_location is None:
+            print("Could not find undock_location")
+        else:
+            undock_location_x, undock_location_y = pyautogui.center(undock_location)
+            pyautogui.click(undock_location_x, undock_location_y)
 
 
 if __name__ == '__main__':
