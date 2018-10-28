@@ -7,6 +7,7 @@ def macro_navigation():
 
 # Am I docked?
 docked = '?'
+
 if docked == 'n':
     print('Currently Undocked')
 elif docked == "y":
