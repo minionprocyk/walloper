@@ -1,7 +1,6 @@
-from GlobalSettings import PROGRAM_NAME, EVE_BASE_ADDRESS
+from operationv.GlobalSettings import PROGRAM_NAME, EVE_BASE_ADDRESS
 from memorpy import Address, Process
 from threading import Thread, ThreadError
-from ShipInfo import ShipInfo
 
 
 class MemoryRead(object):
