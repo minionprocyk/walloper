@@ -1,7 +1,7 @@
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
-from operationv.GlobalSettings import MAIN_WINDOW_TITLE
+from GlobalSettings import MAIN_WINDOW_TITLE
 
 
 class MainWindow(object):

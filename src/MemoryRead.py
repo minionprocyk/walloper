@@ -1,4 +1,4 @@
-from operationv.GlobalSettings import PROGRAM_NAME, EVE_BASE_ADDRESS
+from GlobalSettings import PROGRAM_NAME, EVE_BASE_ADDRESS
 from memorpy import Address, Process
 from threading import Thread, ThreadError
 
@@ -14,18 +14,17 @@ class MemoryRead(object):
     def __init__(self):
         self.process = self.attach_mem()
 
-    @staticmethod
+
     def attach_mem(self):
         print("Attaching to process")
-        process = Process(name='exefile.exe')
+        base_process = Process(name='exefile.exe')
 
-        if not process:
+        if not base_process:
             print("EVE process not found")
             # exit(1)
-        return process
+        return base_process
 
-    @staticmethod
-    def test_read_mem(address, process):
+    def test_read_mem(self, address, process):
         some_val = Address(address, process).read('float')
         print(some_val)
 
@@ -57,8 +56,10 @@ if __name__ == '__main__':
     print("hello {program_name}".format(program_name=PROGRAM_NAME))
     readmem = MemoryRead()
     address = 0x0000
-    if readmem.is_attached() is False:
-        proc = readmem.attach_mem()
-        readmem.test_read_mem(address, proc)
+    if readmem.is_attached():
+        proc = readmem.process
+        print('Process={}'.format(proc))
+        print('{}'.format(proc.read_ptrace))
+        # readmem.test_read_mem(address, readmem.process)
 
 
