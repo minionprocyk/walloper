@@ -1,3 +1,6 @@
+from EveWindowManager import EveWindowManager
+
+window_manager = EveWindowManager()
 # create main
 # --- Nothing Above this line ---
 # -- Navigation --
@@ -8,10 +11,10 @@ def macro_navigation():
 #FIX ME IM BROKEN
 # Am I docked? (Updated 11/11/2018)
 def docked():
-    docked = image_exist('undock_2.png')
-    if docked == 'False':
+    docked = window_manager.image_exist('undock_2.png')
+    if docked == False:
         print('Currently Undocked')
-    elif docked == "True":
+    elif docked == True:
         print('Currently Docked')
     elif docked == '?':
         print('Not sure if docked')
@@ -23,19 +26,11 @@ def docked():
 #FIX ME IM BROKEN
 # If I am docked then undock
 def undock():
-    window_manag'False'
-    elif docked =='True':
-        docked == 'True'
+    if docked():
+        window_manager.click_image('undock_2.png')
     else:
-        print('Error @ "If I am docked, then undock"')er = EveWindowManager()
-    window_manager.click_image('undock_2.png')
+        print('Error @ "If I am docked, then undock"')
 
-evaluate_docked == '?'
-while docked == 'True':
-    undock()
-    docked = docked()
-    if docked == 'False':
-        docked ==
 
 # select destination
 destination_selected ='?'

@@ -4,6 +4,7 @@ import time
 
 from GlobalSettings import IMAGES_DIR
 
+
 class EveWindowManager:
 
     def __init__(self):
@@ -12,14 +13,13 @@ class EveWindowManager:
     def click_something(self):
         pyautogui.click(100, 100, 1)
 
-    def image_exist(selfself, file_name):
+    def image_exist(self, file_name):
         image_location = pyautogui.locateOnScreen(os.path.join(IMAGES_DIR, file_name))
         if image_location is None:
-            response = 'False'
+            response = False
         else:
-            response = 'True'
+            response = True
         return response
-
 
     def click_image(self, file_name):
         image_location = pyautogui.locateOnScreen(os.path.join(IMAGES_DIR, file_name))
