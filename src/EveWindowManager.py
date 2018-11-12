@@ -65,6 +65,11 @@ class EveWindowManager:
 
 if __name__ == '__main__':
     window_manager = EveWindowManager()
-    time.sleep(2)
+    time.sleep(5)
+    docked = window_manager.image_exist('undock_2.png')
+    print(docked)
     window_manager.click_image('undock_2.png')
     print('finished')
+    time.sleep(10)
+    docked = window_manager.image_exist('undock_2.png')
+    print(docked)

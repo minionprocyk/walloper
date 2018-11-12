@@ -23,7 +23,11 @@ def docked():
 #FIX ME IM BROKEN
 # If I am docked then undock
 def undock():
-    window_manager = EveWindowManager()
+    window_manag'False'
+    elif docked =='True':
+        docked == 'True'
+    else:
+        print('Error @ "If I am docked, then undock"')er = EveWindowManager()
     window_manager.click_image('undock_2.png')
 
 evaluate_docked == '?'
@@ -31,11 +35,7 @@ while docked == 'True':
     undock()
     docked = docked()
     if docked == 'False':
-        docked == 'False'
-    elif docked =='True':
-        docked == 'True'
-    else:
-        print('Error @ "If I am docked, then undock"')
+        docked ==
 
 # select destination
 destination_selected ='?'
