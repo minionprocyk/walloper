@@ -12,6 +12,15 @@ class EveWindowManager:
     def click_something(self):
         pyautogui.click(100, 100, 1)
 
+    def image_exist(selfself, file_name):
+        image_location = pyautogui.locateOnScreen(os.path.join(IMAGES_DIR, file_name))
+        if image_location is None:
+            response = 'False'
+        else:
+            response = 'True'
+        return response
+
+
     def click_image(self, file_name):
         image_location = pyautogui.locateOnScreen(os.path.join(IMAGES_DIR, file_name))
         if image_location is None:

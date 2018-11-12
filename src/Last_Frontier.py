@@ -5,28 +5,35 @@
 def macro_navigation():
     print("macro_navigation")
 
-# Am I docked?
-docked = '?'
+#FIX ME IM BROKEN
+# Am I docked? (Updated 11/11/2018)
+def docked():
+    docked = image_exist('undock_2.png')
+    if docked == 'False':
+        print('Currently Undocked')
+    elif docked == "True":
+        print('Currently Docked')
+    elif docked == '?':
+        print('Not sure if docked')
+    #evaluate if docked or not using ingame memory reading method / logic
+    else:
+        print('Error @ "Am I docked?"')
+    return docked
 
-if docked == 'n':
-    print('Currently Undocked')
-elif docked == "y":
-    print('Currently Docked')
-elif docked == '?':
-    print('Not sure if docked')
-#evaluate if docked or not using ingame memory reading method / logic
-else:
-    print('Error @ "Am I docked?"')
-
+#FIX ME IM BROKEN
 # If I am docked then undock
+def undock():
+    window_manager = EveWindowManager()
+    window_manager.click_image('undock_2.png')
+
 evaluate_docked == '?'
-while docked == 'y':
-    print('execite undock feature')
-    print('execute evaluate if docked / undocked feature')
-    if evaluate_docked == 'n':
-        docked == 'n'
-    elif evaluate_docked =='y':
-        docked == 'y'
+while docked == 'True':
+    undock()
+    docked = docked()
+    if docked == 'False':
+        docked == 'False'
+    elif docked =='True':
+        docked == 'True'
     else:
         print('Error @ "If I am docked, then undock"')
 
