@@ -1,6 +1,7 @@
 import pyautogui
 import os
 import time
+
 from GlobalSettings import IMAGES_DIR
 
 class EveWindowManager:
@@ -20,6 +21,37 @@ class EveWindowManager:
             time.sleep(1)
             pyautogui.click(image_location_x, image_location_y)
             pyautogui.click(image_location_x, image_location_y)
+
+    def key_press(self, key_name):
+        if key_name != '':
+            pyautogui.press(key_name)
+        else:
+            print('No key_name value exists.')
+
+    def type(self, text):
+        if text != '':
+            # interval value being replaced with a random human typing speed
+            # value to simulate real person would be nice. give this random value
+            # a range of randomness too!. (about 1, to about 3 for example)
+            # would produce (1.1,2.7) (0.8,2.9) (0.9,3.1)
+            interval = 0.1
+            pyautogui.typewrite(text, interval)
+        else:
+            print('No text value found.')
+
+    def key_press_c(self, key_name):
+        if key_name != '':
+            interval = 0.015
+            pyautogui.keyDown(key_name)
+            time.sleep(interval)
+            pyautogui.keyUp(key_name)
+        else:
+            print('No key_name value exists')
+
+
+
+
+
 
 
 if __name__ == '__main__':
