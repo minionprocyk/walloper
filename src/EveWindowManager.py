@@ -33,7 +33,7 @@ class EveWindowManager:
             # interval value being replaced with a random human typing speed
             # value to simulate real person would be nice. give this random value
             # a range of randomness too!. (about 1, to about 3 for example)
-            # would produce (1.1,2.7) (0.8,2.9) (0.9,3.1)
+            # would produce (1.1,2.7) (0.8,2.9) (0.9,3.1) cool.
             interval = 0.1
             pyautogui.typewrite(text, interval)
         else:
