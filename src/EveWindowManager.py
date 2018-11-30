@@ -80,6 +80,6 @@ if __name__ == '__main__':
     #print(docked)
 
     #Select Destination
-    window_manager.click_image('First destination')
+    window_manager.click_image('first_destination')
 
     print('ended execution')
