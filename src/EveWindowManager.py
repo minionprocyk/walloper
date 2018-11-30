@@ -64,12 +64,22 @@ class EveWindowManager:
 
 
 if __name__ == '__main__':
+    print('starting execution')
+
     window_manager = EveWindowManager()
     time.sleep(5)
-    docked = window_manager.image_exist('undock_2.png')
-    print(docked)
-    window_manager.click_image('undock_2.png')
-    print('finished')
-    time.sleep(10)
-    docked = window_manager.image_exist('undock_2.png')
-    print(docked)
+
+    #UNDOCK
+
+    #docked = window_manager.image_exist('undock_2.png')
+    #print(docked)
+    #window_manager.click_image('undock_2.png')
+    #print('finished')
+    #time.sleep(10)
+    #docked = window_manager.image_exist('undock_2.png')
+    #print(docked)
+
+    #Select Destination
+    window_manager.click_image('First destination')
+
+    print('ended execution')

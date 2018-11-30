@@ -1,6 +1,8 @@
 from EveWindowManager import EveWindowManager
-
 window_manager = EveWindowManager()
+
+import time
+
 # create main
 # --- Nothing Above this line ---
 # -- Navigation --
@@ -26,25 +28,31 @@ def docked():
 #FIX ME IM BROKEN
 # If I am docked then undock
 def undock():
-    if docked():
+    docked = '?'
+    docked()
+    while docked != False:
         window_manager.click_image('undock_2.png')
+        time.sleep(3)
+        docked()
     else:
         print('Error @ "If I am docked, then undock"')
 
 
 # select destination
-destination_selected ='?'
-evaluate_destination_selected ='?'
-while destination_selected != 'y':
-    print('execute select destination feature')
-    evaluate_destination_selected ='execute evaluate select destination feature'
-    print(evaluate_destination_selected)
-    if evaluate_destination_selected == 'y':
-        destination_selected = 'y'
-    elif evaluate_destination_selected == 'n':
-        destination_selected = 'n'
-    else:
-        print('Error @ "select destination"')
+def select_destination():
+
+    destination_selected ='?'
+    evaluate_destination_selected ='?'
+    while destination_selected != True:
+        print('execute select destination feature')
+        evaluate_destination_selected ='execute evaluate select destination feature'
+        print(evaluate_destination_selected)
+        if evaluate_destination_selected == True:
+            destination_selected = True
+        elif evaluate_destination_selected == False:
+            destination_selected = False
+        else:
+            print('Error @ "select destination"')
 
 # Enable auto pilot
 auto_pilot = '?'
@@ -68,3 +76,7 @@ def micro_navigation():
 # Have I reached my destination? if yes do I HALT or continue?
 # --- Nothing Below this line ---
 # execute main
+def main():
+    undock()
+
+main()
