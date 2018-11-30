@@ -2,6 +2,7 @@ from EveWindowManager import EveWindowManager
 window_manager = EveWindowManager()
 
 import time
+import pyautogui
 
 # create main
 # --- Nothing Above this line ---
@@ -40,7 +41,35 @@ def undock():
 
 # select destination
 def select_destination():
+    n = 1 # TEMPORARY IN PLACE OF INPUT PARAMETER
+    pl_variable = 1
+    xt = 12 + 12
+    yt = 123 + (16 * pl_variable) + 4
 
+    # right click
+    pyautogui.rightClick() # VALUES HERE PUT MOUSE IN CENTER OF SCREEN FOR EASY MENU
+    time.sleep(1)
+    # mouse x value = XO
+    # mouse y value = YO
+    x, y = pyautogui.position()
+    # tabs = N (number of menue tabs to go through)
+    tabs = n
+    # while tabs != 0
+        # tabs = tabs -1
+        # mouse x value = XO + XT
+        # mouse y value = YO + YT
+        # move mouse to (XO + XT, YO + YT)
+        # if tabs = 0 then left click
+    while tabs != 0:
+        tabs = tabs -1
+        x = x +xt
+        y = y + yt
+        pyautogui.moveTo(x ,y)
+        time.sleep(1)
+        if tabs == 0:
+            pyautogui.click()
+
+def select_destination2():
     destination_selected ='?'
     evaluate_destination_selected ='?'
     while destination_selected != True:
@@ -55,16 +84,17 @@ def select_destination():
             print('Error @ "select destination"')
 
 # Enable auto pilot
-auto_pilot = '?'
-while auto_pilot != 'on':
-    print('execite enable_auto_pilot')
-    evaluate_auto_pilot='execute evaluate_enable_auto_pilot'
-    if evaluate_auto_pilot == 'y':
-        auto_pilot = 'on'
-    elif evaluate_auto_pilot == 'n':
-        auto_pilot ='off'
-    else:
-        print('Error @ Enable autopilot')
+def auto_pilot():
+    auto_pilot = '?'
+    while auto_pilot != 'on':
+        print('execite enable_auto_pilot')
+        evaluate_auto_pilot='execute evaluate_enable_auto_pilot'
+        if evaluate_auto_pilot == 'y':
+            auto_pilot = 'on'
+        elif evaluate_auto_pilot == 'n':
+            auto_pilot ='off'
+        else:
+            print('Error @ Enable autopilot')
 
 # Have I reached my destiniation? or Am I Docked?
 # - Micro Navigation -
@@ -77,6 +107,9 @@ def micro_navigation():
 # --- Nothing Below this line ---
 # execute main
 def main():
-    undock()
+    print('Starting this bad boy')
+    time.sleep(5)
+    select_destination()
+    print('This bad boy is take a rest')
 
 main()

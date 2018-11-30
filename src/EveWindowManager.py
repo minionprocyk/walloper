@@ -24,7 +24,7 @@ class EveWindowManager:
     def click_image(self, file_name):
         image_location = pyautogui.locateOnScreen(os.path.join(IMAGES_DIR, file_name))
         if image_location is None:
-            print("Could not find undock_location")
+            print("Could not find {}".format(file_name))
         else:
             image_location_x, image_location_y = pyautogui.center(image_location)
             time.sleep(1)
@@ -67,7 +67,7 @@ if __name__ == '__main__':
     print('starting execution')
 
     window_manager = EveWindowManager()
-    time.sleep(5)
+    time.sleep(9)
 
     #UNDOCK
 
@@ -80,6 +80,6 @@ if __name__ == '__main__':
     #print(docked)
 
     #Select Destination
-    window_manager.click_image('first_destination')
+    window_manager.click_image('first_destination.png')
 
     print('ended execution')
